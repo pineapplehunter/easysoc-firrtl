@@ -1,5 +1,14 @@
 ## Firrtl plugin for IntelliJ platform
 
+<!-- Plugin description -->
+Jump to the corresponding Chisel code by navigate(Ctrl+Click or Ctrl+B) on the Firrtl fileinfo comment.</br>
+Also supports Syntax highlighting, Code folding, Structure View and more features in the future.</br>
+
+Interactive Firrtl circuit Simulator based on [Treadle](https://github.com/chipsalliance/treadle).
+
+Usage: When opening a Firrtl file, the menu HDL->Treadle Simulator becomes available.
+<!-- Plugin description end -->
+
 ### Features
 
 - Syntax highlighting
@@ -13,4 +22,5 @@
 
 1. [Learn](https://plugins.jetbrains.com/docs/intellij/basics.html) how to develop an IntelliJ Plugin with Gradle
 
-2. Modify the build.gradle file according to your environment, you need to be very familiar with the relevant settings listed at https://github.com/JetBrains/gradle-intellij-plugin
+2. Modify the build.gradle file according to your environment, you need to be very familiar with the relevant settings
+   listed at https://github.com/JetBrains/gradle-intellij-plugin

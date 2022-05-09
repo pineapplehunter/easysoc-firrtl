@@ -20,8 +20,7 @@ import java.awt.*;
 public class WatchPanel {
 
     private JPanel watchPanel;
-    private JBTable table;
-    private TableModel tableModel;
+    final private TableModel tableModel;
 
     private TreadleTester treadleTester;
     private WaveJSONBrowser waveJSONBrowser;
@@ -31,7 +30,7 @@ public class WatchPanel {
 
     public WatchPanel() {
         tableModel = new TableModel();
-        table = new JBTable(tableModel);
+        JBTable table = new JBTable(tableModel);
         table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         table.getTableHeader().setReorderingAllowed(false);
         table.setRowSelectionAllowed(true);
@@ -52,7 +51,7 @@ public class WatchPanel {
         table.getTransferHandler();
         table.setTransferHandler(new TableRowTransferHandler(table));
 
-        watchPanel.add(new JBScrollPane(table, JBScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JBScrollPane.HORIZONTAL_SCROLLBAR_NEVER),  BorderLayout.CENTER);
+        watchPanel.add(new JBScrollPane(table, JBScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JBScrollPane.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.CENTER);
     }
 
     public JPanel getPanel() {
@@ -130,7 +129,7 @@ public class WatchPanel {
             }
             fireTableDataChanged();
             if (treadleTester.cycleCount() > 0) {
-                String waveJSON = treadleTester.waveformValues(watchSymbols.toArray(new String[0]),0,-1).toJsonString();
+                String waveJSON = treadleTester.waveformValues(watchSymbols.toArray(new String[0]), 0, -1).toJson().toString();
                 waveJSONBrowser.renderWaveForm(waveJSON);
             }
         }
